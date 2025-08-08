@@ -1,6 +1,6 @@
 [project]
 name = "smd-resistor-decoder"
-version = "0.1.0"
+version = "1.0.0"
 description = "Convert SMD resistor digit codes to real values (CLI + GUI)"
 readme = "README.md"
 requires-python = ">=3.8"
