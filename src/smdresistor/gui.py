@@ -2,7 +2,17 @@ import json
 import tkinter as tk
 from pathlib import Path
 from tkinter import ttk
-from .decoder import decode, format_ohms
+
+# Support both package and frozen execution
+try:
+    from .decoder import decode, format_ohms  # type: ignore
+except Exception:
+    from smdresistor.decoder import decode, format_ohms  # type: ignore
+# Support running both as a package and as a frozen app (PyInstaller)
+try:
+    from .decoder import decode, format_ohms  # type: ignore
+except Exception:
+    from smdresistor.decoder import decode, format_ohms  # type: ignore
 
 APP_TITLE = "SMD Resistor Decoder"
 CONFIG_PATH = Path.home() / ".smd_resistor_decoder.json"
